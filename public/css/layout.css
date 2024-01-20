@@ -1,0 +1,164 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+
+.bgcolor {
+    background-color:#181642 ;
+    color:white;
+}
+
+a{
+    color: white;
+}
+
+.headertext{
+    margin-top: 20%;
+    margin-left: -5%;
+
+}
+h2 h4{
+    color: white;
+}
+h1{
+    color:#D7287A;
+}
+
+.pink-button {
+    background-color: #D7287A; /* Pink color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.frontimage{
+    margin-top: -7%;
+    margin-left: 10%;
+    
+}
+.horizontal-line {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    border: none;
+    height: 0.5px; /* Set the height of the line */
+    background-color: whitesmoke;
+}
+
+.typewriter {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
+
+  .white-border-box {
+    width: 300px; /* Set the width of the box */
+    height: 400px; /* Set the height of the box */
+    border: 2px solid #fff; /* Set the white border */
+    background-color:transparent; /* Set the background color */
+    margin: 20px; /* Add margin for spacing */
+    padding: 20px; /* Add padding for content spacing */
+    box-sizing: border-box; /* Include border and padding in the box dimensions */
+}
+
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: #ffffff;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popup-header span {
+    color: green;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.popup-header button {
+    background: black;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.popup-body {
+    padding: 20px;
+}
+
+.popup-body p {
+    color: black;
+}
+
+.popup-body label {
+    display: block;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.popup-body input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.popup-body button {
+    background: green;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.popup-footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+}
+
+.popup-footer button {
+    margin-left: 5px;
+}
+

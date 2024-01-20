@@ -1,0 +1,44 @@
+<!-- Login Modal -->
+<div class="modal" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" style="color: green;">Experience easily!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" style="color: black;">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <% if(errorMessage){ %>
+                    <div class="alert alert-danger" role="alert">
+                    <%= errorMessage %>
+                  </div>
+                <% } %>
+                <!-- Email Input Group -->
+                <form action="/login" method="post">
+                    <div class="input-group mb-3">
+                        
+                        <div class="input-group-prepend">
+                            <span for="email" class="input-group-text" id="basic-addon1">Email</span>
+                        </div>
+                        <input type="email" class="form-control" placeholder="Enter your email" aria-label="Your Email"
+                            aria-describedby="basic-addon1" id="email" name="email" required>
+                    </div>
+
+                    <!-- Password Input Group -->
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span for="password" class="input-group-text" id="basic-addon2">Password</span>
+                        </div>
+                        <input type="password" class="form-control" placeholder="Enter your password"
+                            aria-label="Your Password" aria-describedby="basic-addon2" id="password" name="password" required> 
+                    </div>
+                    <button type="submit" class="pink-button">Login</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="pink-button" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

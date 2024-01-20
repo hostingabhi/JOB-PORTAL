@@ -1,0 +1,93 @@
+<form method="post" action="/update-job" onSubmit="return validateForm();">
+    <div style="max-width: 400px;">
+    </div>
+    <input type="hidden" class="form-control" id="id" name="id" value="<%= job.id %>" >
+    <div style="padding-bottom: 18px;">Select job category<span style="color: red;"> *</span><br/>
+        <select id="data_1" name="data_1" style="max-width: 450px;" class="form-control">
+            <option <%= job.jobcat === 'Tech' ? 'selected' : '' %>>Tech</option>
+            <option <%= job.jobcat === 'Non Tech' ? 'selected' : '' %>>Non Tech</option>
+        </select>
+    </div>
+
+    <div style="padding-bottom: 18px;">Select Job Designation<span style="color: red;"> *</span><br/>
+        <select id="data_2" name="data_2" style="max-width: 450px;" class="form-control">
+            <option value="HR" <%= job.jobdesg === 'HR' ? 'selected' : '' %>>HR</option>
+            <option value="SDE" <%= job.jobdesg === 'SDE' ? 'selected' : '' %>>SDE</option>
+            <option value="DevOps" <%= job.jobdesg === 'DevOps' ? 'selected' : '' %>>DevOps</option>
+            <option value="MERN Developer" <%= job.jobdesg === 'MERN Developer' ? 'selected' : '' %>>MERN Developer</option>
+            <option value="MEAN Developer" <%= job.jobdesg === 'MEAN Developer' ? 'selected' : '' %>>MEAN Developer</option>
+            <option value="JAVA Developer" <%= job.jobdesg === 'JAVA Developer' ? 'selected' : '' %>>JAVA Developer</option>
+            <option value="Front-End Developer" <%= job.jobdesg === 'Front-End Developer' ? 'selected' : '' %>>Front-End Developer</option>
+            <option value="Back-End Developer" <%= job.jobdesg === 'Back-End Developer' ? 'selected' : '' %>>Back-End Developer</option>
+            <option value="Full-Stack Developer" <%= job.jobdesg === 'Full-Stack Developer' ? 'selected' : '' %>>Full-Stack Developer</option>
+        </select>
+    </div>
+    
+    <div style="padding-bottom: 18px;">Enter Job Location<span style="color: red;"> *</span><br/>
+    <input type="text" id="data_3" name="data_3" style="max-width : 450px;" class="form-control" value="<%= job.jobloc %>"/>
+    </div>
+    <div style="padding-bottom: 18px;">Company Name<span style="color: red;"> *</span><br/>
+    <input type="text" id="data_4" name="data_4" style="max-width : 450px;" class="form-control" value="<%= job.cname %>"/>
+    </div>
+    <div style="padding-bottom: 18px;">enter Salary<span style="color: red;"> *</span><br/>
+    <input type="text" id="data_6" name="data_6" style="max-width : 450px;" class="form-control" value="<%= job.salary %>"/>
+    </div>
+    <div style="padding-bottom: 18px;">Positions<span style="color: red;"> *</span><br/>
+    <input type="text" id="data_7" name="data_7" style="max-width : 450px;" class="form-control" value="<%= job.npos %>"/>
+    </div>
+    <div style="padding-bottom: 18px;">Select skills required for this Job<span style="color: red;"> *</span><br/>
+        <span><input type="checkbox" id="data_9_0" name="data_9" value="React" <%= job.skillset.includes('React') ? 'checked' : '' %>/> React</span><br/>
+        <span><input type="checkbox" id="data_9_1" name="data_9" value="Node Js" <%= job.skillset.includes('Node Js') ? 'checked' : '' %>/> Node Js</span><br/>
+        <span><input type="checkbox" id="data_9_2" name="data_9" value="Angular" <%= job.skillset.includes('Angular') ? 'checked' : '' %>/> Angular</span><br/>
+        <span><input type="checkbox" id="data_9_3" name="data_9" value="HTML" <%= job.skillset.includes('HTML') ? 'checked' : '' %>/> HTML</span><br/>
+        <span><input type="checkbox" id="data_9_4" name="data_9" value="CSS" <%= job.skillset.includes('CSS') ? 'checked' : '' %>/> CSS</span><br/>
+        <span><input type="checkbox" id="data_9_5" name="data_9" value="Java Script" <%= job.skillset.includes('Java Script') ? 'checked' : '' %>/> Java Script</span><br/>
+    </div>    
+    <div style="padding-bottom: 18px;">Apply By<span style="color: red;"> *</span><br/>
+        <input type="text" id="data_10" name="data_10" style="max-width: 450px;" class="form-control" value="<%= job.applyby %>"/>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.4.0/pikaday.min.js" type="text/javascript"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.4.0/css/pikaday.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">new Pikaday({ field: document.getElementById('data_10') });</script>
+    <div style="padding-bottom: 18px;">
+    <button type="submit">Submit</button>
+    <div>
+    </form>
+    
+    <script type="text/javascript">
+    function validateForm() {
+    if (isEmpty(document.getElementById('data_3').value.trim())) {
+    alert('Enter Job Location is required!');
+    return false;
+    }
+    if (isEmpty(document.getElementById('data_4').value.trim())) {
+    alert('Company Name is required!');
+    return false;
+    }
+    if (isEmpty(document.getElementById('data_6').value.trim())) {
+    alert('enter Salary is required!');
+    return false;
+    }
+    if (isEmpty(document.getElementById('data_7').value.trim())) {
+    alert('Positions is required!');
+    return false;
+    }
+    if (isEmpty(document.getElementById('data_8').value.trim())) {
+    alert('Question is required!');
+    return false;
+    }
+    if (!document.getElementById('data_9_0').checked && !document.getElementById('data_9_1').checked && !document.getElementById('data_9_2').checked && !document.getElementById('data_9_3').checked && !document.getElementById('data_9_4').checked && !document.getElementById('data_9_5').checked ) {
+    alert('Select skills required for this Job is required!');
+    return false;}
+    if (isEmpty(document.getElementById('data_10').value.trim())) {
+    alert('Apply By is required!');
+    return false;
+    }
+    return true;
+    }
+    function isEmpty(str) { return (str.length === 0 || !str.trim()); }
+    function validateEmail(email) {
+    var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,15}(?:\.[a-z]{2})?)$/i;
+    return isEmpty(email) || re.test(email);
+    }
+    </script>

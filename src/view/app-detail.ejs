@@ -1,0 +1,26 @@
+<table class="table text-white">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Contact</th>
+        <th scope="col"> Resume</th>
+      </tr>
+    </thead>
+    <tbody class="thead-light">
+        <% applicants.forEach(applicant=>{ %>
+      <tr>
+        <td><%= applicant.sn %></td>
+        <td><%= applicant.appname %></td>
+        <td><%= applicant.appemail %></td>
+        <td><%= applicant.appcontact %></td>
+        <td>
+            <a href="/view-resume/<%=applicant.appid %>">
+                <button class="btn btn-primary"> View</button>
+            </a>
+        </td>
+      </tr>
+        <% }) %>
+    </tbody>
+  </table>

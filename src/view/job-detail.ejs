@@ -1,0 +1,186 @@
+
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-md-12">
+      <!-- Thin Line Box with Image Banner -->
+      <div class="card border-5">
+        <img src="/image/cover.jpeg" class="card-img-top" alt="Banner Image">
+        <div class="card-body">
+          <!-- Your content goes here -->
+
+          <div>
+            <p class="font-weight-normal" style="font-size: 32px;">
+              <span style="color: red;">
+                <%= job.jobdesg %>
+              </span>
+              <span style="color: green;"> Opportunity in <%= job.jobloc %> at </span>
+              <span style="color: aqua;">
+                <%= job.cname %>
+              </span>
+            </p>
+          </div>
+          <div>
+            <span class="badge badge-warning" style="font-size: 1.5em; margin-right: 5%;">Actively Hiring <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-graph-up-arrow" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5"/>
+            </svg></span>
+            <a href="/update-job/<%= job.id %>" style="color: black;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+                <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+              </svg>
+            </a>
+            <a href="/delete-job/<%= job.id %>" style="color: black; margin-left: 3%;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"/>
+              </svg>
+            </a>
+          </div>
+          <br>
+          <div style="color: black;">
+            <p class="font-weight-normal" style="font-size: 24px;">
+              <%= job.cname %>
+            </p>
+            <p class="font-weight-normal" style="font-size: 16px;">
+              <%= job.jobcat %> <%= job.jobdesg %>
+            </p>
+            <br>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.3 1.3 0 0 0-.37.265.3.3 0 0 0-.057.09V14l.002.008.016.033a.6.6 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.6.6 0 0 0 .146-.15l.015-.033L12 14v-.004a.3.3 0 0 0-.057-.09 1.3 1.3 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465s-2.462-.172-3.34-.465c-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411" />
+            </svg>
+            <%= job.jobloc %>
+              <br>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-currency-rupee" viewBox="0 0 16 16">
+                <path
+                  d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z" />
+              </svg>
+              <%= job.salary %>
+                <br>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-hourglass-split" viewBox="0 0 16 16">
+                  <path
+                    d="M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2zm3 6.35c0 .701-.478 1.236-1.011 1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48zm1 0v3.17c2.134.181 3 1.48 3 1.48a3.5 3.5 0 0 0-1.989-3.158C8.978 9.586 8.5 9.052 8.5 8.351z" />
+                </svg>
+                Apply by <%= job.applyby %>
+                  <br>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-reception-4" viewBox="0 0 16 16">
+                    <path
+                      d="M0 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5z" />
+                  </svg>
+                  Number of openings <%= job.npos %>
+                    <br>
+          </div>
+          <div>
+
+            <a href="/app-detail/<%= job.id %>" style="color: palevioletred;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-people-fill" viewBox="0 0 16 16">
+                <path
+                  d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
+              </svg>
+              Applicant:<%= applicants %>
+            </a>
+
+            <br>
+            <% var skillsArray=job.skillset.split(','); %>
+              <% skillsArray.forEach(skill=> { %>
+                <span class="badge badge-primary">
+                  <%= skill.trim() %>
+                </span>
+                <% }); %>
+                  <br>
+                  <br>
+                  <button type="button" class="btn btn-primary" onclick="openPopup()">Apply Now</button>
+
+                  <div id="popupContainer" class="popup-container">
+                    <div class="popup-content">
+                      <div class="popup-header">
+                        <span>Easily</span>
+                        <button onclick="closePopup()">Close</button>
+                      </div>
+                      <div class="popup-body">
+                        <p>Apply in less than 1 minute</p>
+                        <% if(errorMessage){ %>
+                          <div class="alert alert-danger" role="alert">
+                            <%= errorMessage %>
+                          </div>
+                          <% } %>
+                            <form action="/addapplicant/<%= job.id %>" method="post" enctype="multipart/form-data">
+                              <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+                                </div>
+                                <input name="applicantName" id="applicantName" type="text" class="form-control"
+                                  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                              </div>
+                              <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+                                </div>
+                                <input name="applicantEmail" id="applicantEmail" type="email" class="form-control"
+                                  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                              </div>
+                              <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-default">Contact</span>
+                                </div>
+                                <input name="applicantContact" id="applicantContact" type="number" class="form-control"
+                                  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                              </div>
+                              <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                </div>
+                                <div class="custom-file">
+                                  <input name="CvUrl" type="file" class="custom-file-input" id="CvUrl"
+                                    aria-describedby="inputGroupFileAddon01" accept=".pdf, .doc, .docx">
+                                  <label class="custom-file-label" for="CvUrl">Choose file</label>
+                                </div>
+                              </div>
+                              <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                            </form>
+                      </div>
+                      <br>
+                      <br>
+                      <br>
+                      <br>
+                      <div class="popup-footer">
+                        <button type="button" class="btn btn-secondary" onclick="closePopup()">Close</button>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+                  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+                  <script>
+                    function openPopup() {
+                      var popupContainer = document.getElementById('popupContainer');
+                      if (popupContainer) {
+                        popupContainer.style.display = 'flex';
+                      }
+                    }
+
+                    function closePopup() {
+                      var popupContainer = document.getElementById('popupContainer');
+                      if (popupContainer) {
+                        popupContainer.style.display = 'none';
+                      }
+                    }
+                  </script>
+
+                  <br>
+                  <br>
+                  <button type="button" class="btn btn-success">Posted <%= %></button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

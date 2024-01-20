@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="headertext">
+        <h1 class="fontcolour">
+          
+          A comprehensive platform for<br>reliable
+        </h1>
+        <h3 class="typewriter">Job Opportunity and internships.</h3>
+        <h4>
+          Get Discovered Get Hired.
+        </h4>
+        <a href="/jobs">
+          <button class="pink-button">I'm A Job Seeker</button>
+        </a>
+        <!-- Button to trigger the modal -->
+        <button type="button" class="pink-button" data-toggle="modal" data-target="#recruiterModal">I'm A Recruiter</button>
+      </div>
+    </div>
+    <div class="col-sm">
+      <img class="frontimage" src="/image/job.png" style="max-width: 100%; height: auto;">
+    </div>
+  </div>
+</div>
+
+<!-- Include the recruiter-register-form.ejs content -->
+<%- include('./recruiter-register-form.ejs', { errorMessage: errorMessage }) %>
+
+<!-- Include the recruiter-login-form.ejs content -->
+<%- include('./recruiter-login-form.ejs', { errorMessage: errorMessage }) %>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
