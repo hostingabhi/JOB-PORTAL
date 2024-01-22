@@ -21,4 +21,6 @@ export default class UserModel{
     }
 }
 
-var users = []
+var users = [
+    new UserModel(1,'a','a@a','1')
+]

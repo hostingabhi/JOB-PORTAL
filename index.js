@@ -12,6 +12,7 @@ import multer from 'multer';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { promises as fs } from 'fs';
+import flash from 'express-flash';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -27,6 +28,8 @@ server.use(
         cookie: { secure: false}
     })
 );
+
+server.use(flash());
 
 server.use(express.static('public'));
 //setup view engine setting
@@ -49,24 +52,24 @@ server.get("/", jobcontoller.home);
 server.get("/jobs",jobcontoller.getjobs)
 server.get("/ViewDetails/:id",jobcontoller.viewjobdetail)
 //setup routes for user controller
-// Update your registration route handler in index.js
-server.post("/register", userController.postRegister, (req, res) => {
-    // Assuming registration is successful
-    res.json({ success: true, showModal: true });
-});
 
+// registration route handler in index.js
+server.post("/register", userController.postRegister);
 server.post("/login",userController.postLogin)
+server.get("/logout",auth,userController.logout)
+
 //setup other routes
 server.post("/addapplicant/:id",uploadFile.single('CvUrl'),applicantController.postApplicant)
-server.get("/app-detail/:id",applicantController.getApplicant);
-server.get("/view-resume/:id",applicantController.getResume)
+server.get("/app-detail/:id",auth,applicantController.getApplicant);
+server.get("/view-resume/:id",auth,applicantController.getResume)
 
 //curd opertaion on Job
-server.get("/getform",jobcontoller.getform)
-server.post("/postjob",jobcontoller.postjob)
-server.get("/update-job/:id",jobcontoller.getupdatejobview)
-server.post("/update-job",jobcontoller.postupdatejob)
-server.get("/delete-job/:id",jobcontoller.deletejob)
+server.get("/getform", auth, jobcontoller.getform)
+server.post("/postjob", auth, jobcontoller.postjob)
+server.get("/update-job/:id", auth, jobcontoller.getupdatejobview)
+server.post("/update-job", auth, jobcontoller.postupdatejob)
+server.post("/delete-job/:id",auth,jobcontoller.deletejob)
+
 
 //validationMiddleware,
 //Setup a Server

@@ -17,16 +17,16 @@ export default class ApplicantController {
 
         const job = JobsModel.getById(id);
         let applicants = ApplicantModel.getapp(id);
-        res.render('job-detail', { job: job, errorMessage: null, applicants: applicants });
+        res.render('job-detail', { job: job, errorMessage: null, applicants: applicants,userEmail: req.session.userEmail });
     }
 
-    getApplicant(req, res) {
+    getApplicant(req, res, next) {
         const id = req.params.id;
         var applicants = ApplicantModel.get(id);
-        res.render('app-detail', { applicants: applicants });
+        res.render('app-detail', { applicants: applicants,userEmail: req.session.userEmail });
     }
 
-    async getResume(req, res) {
+    async getResume(req, res, next) {
         const id = parseInt(req.params.id);
         try {
             const applicant = await ApplicantModel.getresume(id);
